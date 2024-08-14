@@ -1,4 +1,4 @@
-package poyectofinal_vm;
+package org.example.poyectofinal_vm;
 
 import javax.swing.JOptionPane;
 

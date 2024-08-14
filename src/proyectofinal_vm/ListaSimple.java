@@ -1,4 +1,4 @@
-package poyectofinal_vm;
+package org.example.poyectofinal_vm;
 
 import javax.swing.JOptionPane;
 
@@ -24,7 +24,7 @@ public class ListaSimple {
     public void agregar() {
         Vehiculo v = new Vehiculo();
         v.setMarca(JOptionPane.showInputDialog("Ingrese la marca del vehículo: "));
-        v.setModelo(Integer.parseInt(
+        v.setAño(Integer.parseInt(
                 JOptionPane.showInputDialog("Digite el modelo: ")));
         NodoListaSimple nuevo = new NodoListaSimple();
         nuevo.setDato(v);
@@ -32,7 +32,7 @@ public class ListaSimple {
         if (vacia()) {
             inicio = nuevo;
 
-        } else if (v.getModelo() < inicio.getDato().getModelo()) {
+        } else if (v.getAño() < inicio.getDato().getAño()) {
 
             nuevo.setSiguiente(inicio);
             inicio = nuevo;
@@ -42,7 +42,7 @@ public class ListaSimple {
         } else {
             NodoListaSimple aux = inicio;
             while ((aux.getSiguiente() != null)
-                    && (aux.getSiguiente().getDato().getModelo() < v.getModelo())) {
+                    && (aux.getSiguiente().getDato().getAño() < v.getAño())) {
                 aux = aux.getSiguiente();
             }
             
@@ -69,7 +69,7 @@ public class ListaSimple {
             NodoListaSimple aux = inicio;
             while (aux != null) {
                 s += aux.getDato().getMarca() + " / "
-                        + aux.getDato().getModelo() + " → ";
+                        + aux.getDato().getAño() + " → ";
                 aux = aux.getSiguiente();
             }
             JOptionPane.showMessageDialog(null, "La lista contiene: \n\n" + s,
